@@ -18,6 +18,8 @@ class BaseScreen extends StatefulWidget {
   }
 
   void hideLoading(BuildContext context) {
+    print('loading widget is closed by LoadingMixin Class method');
+
     Navigator.of(context).pop();
   }
 

@@ -15,21 +15,20 @@ class HomeExtendScreen extends BaseScreen {
 }
 
 class _HomeScreenState extends State<HomeExtendScreen> {
+  /// async 메서드 내에서 context를 위치 시키는 것은 dart 권장사항이 아닙니다.
+  /// 참고 [https://seorenn.github.io/note/flutter-buildcontext-in-async-func.html]
   void getValue() async {
     widget.showLoading(context);
 
     bool result = await callAPI();
 
     if (result) {
-      hideLoading();
-    }
-  }
+      if (!context.mounted) {
+        return;
+      }
 
-  /// async 메서드 내에서 await실행 이후 context를 위치 시키는 것은
-  /// flutter 권장사항이 아니라서 분리했습니다.
-  /// 더 좋은 구조로 가져갈 수 있을 것 같습니다.
-  void hideLoading() {
-    widget.hideLoading(context);
+      widget.hideLoading(context);
+    }
   }
 
   @override
