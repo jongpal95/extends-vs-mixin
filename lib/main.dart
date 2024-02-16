@@ -9,6 +9,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return MaterialApp(
+      title: 'Extends vs Mixin',
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.red,
+          toolbarHeight: 40,
+        ),
+      ),
+      home: const Center(child: Text('compare mixin and extends')),
+    );
   }
 }
