@@ -6,14 +6,14 @@ import 'package:flutter/material.dart';
 /// basescreen을 상속 받아 인스턴스가 생성됩니다.
 /// 해당 스크린은 basescreen의 메서드를 사용할 수 있으면서
 /// 동시에 state를 가지는 클래스입니다.
-class HomeScreen extends BaseScreen {
-  const HomeScreen({super.key});
+class HomeExtendScreen extends BaseScreen {
+  const HomeExtendScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<HomeExtendScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeExtendScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

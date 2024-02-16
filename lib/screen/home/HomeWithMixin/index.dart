@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 /// basescreen을 상속 받지 않았습니다.
 /// 해당 스크린은 basescreen의 메서드를 사용할 수 없지만
 /// loading mixin class의 메서드를 사용할 수 있습니다.
-class HomeScreen extends StatelessWidget with LoadingMixin {
-  const HomeScreen({super.key});
+class HomeMixinScreen extends StatelessWidget with LoadingMixin {
+  const HomeMixinScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

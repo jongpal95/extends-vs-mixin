@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 /// 생성자가 필요 없으며, 메서드만 가지고 있습니다.
 mixin class LoadingMixin {
   void showLoading(BuildContext context) {
+    print('this method is running in LoadingMixin Class');
+
     showDialog(
       context: context,
       builder: (context) => const CommonLoading(),

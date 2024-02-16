@@ -9,6 +9,8 @@ class BaseScreen extends StatefulWidget {
   const BaseScreen({super.key});
 
   void showLoading(BuildContext context) {
+    print('this method is running in BaseScreen Class');
+
     showDialog(
       context: context,
       builder: (context) => const CommonLoading(),
