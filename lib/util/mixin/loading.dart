@@ -12,4 +12,10 @@ mixin class LoadingMixin {
       builder: (context) => const CommonLoading(),
     );
   }
+
+  void hideLoading(BuildContext context) {
+    print('loading widget is closed by LoadingMixin Class method');
+
+    Navigator.of(context).pop();
+  }
 }
