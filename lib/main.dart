@@ -1,3 +1,4 @@
+import 'package:extends_vs_mixin/screen/home/HomeWithExtends/index.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
           toolbarHeight: 40,
         ),
       ),
-      home: const Center(child: Text('compare mixin and extends')),
+      home: const HomeExtendScreen(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:extends_vs_mixin/screen/base/BaseLayout/index.dart';
+import 'package:extends_vs_mixin/util/api/delay.dart';
 import 'package:flutter/material.dart';
 
 /// 첫 시작화면 입니다.
@@ -14,6 +15,23 @@ class HomeExtendScreen extends BaseScreen {
 }
 
 class _HomeScreenState extends State<HomeExtendScreen> {
+  void getValue() async {
+    widget.showLoading(context);
+
+    bool result = await callAPI();
+
+    if (result) {
+      hideLoading();
+    }
+  }
+
+  /// async 메서드 내에서 await실행 이후 context를 위치 시키는 것은
+  /// flutter 권장사항이 아니라서 분리했습니다.
+  /// 더 좋은 구조로 가져갈 수 있을 것 같습니다.
+  void hideLoading() {
+    widget.hideLoading(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +42,7 @@ class _HomeScreenState extends State<HomeExtendScreen> {
         children: [
           Center(
             child: FilledButton(
-              onPressed: () => widget.showLoading(context),
+              onPressed: getValue,
               child: const Text('button'),
             ),
           ),
